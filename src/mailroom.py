@@ -40,3 +40,9 @@ def report():
 
 def email():
     pass
+
+def donor_dict_to_list(DONOR_DICT):
+    donor_list = []
+    for donor in DONOR_DICT:
+        donor_list.append(donor)
+    return donor_list

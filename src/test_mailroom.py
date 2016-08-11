@@ -12,4 +12,6 @@ DONOR_DICT_TABLE = {
 
 
 @pytest.mark.parametrize()
-def test_
+def test_donor_dict_to_list_1()
+    from mailroom import donor_dict_to_list
+    assert donor_list.len > 0
