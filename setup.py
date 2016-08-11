@@ -8,7 +8,7 @@ setup(
     author='Jeff Torres, Adam Palmer',
     author_email='email@email.com',
     license='MIT',
-    py_modules=['mailroom.py'],
+    py_modules=['mailroom'],
     package_dir={'': 'src'},
     install_requires=[],
     extras_require={'test': ['pytest', 'pytest-watch', 'tox']},

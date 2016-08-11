@@ -19,7 +19,7 @@ def main_menu_display():
 
 def validation(user_input):
     if user_input != 'X' or user_input != 'E' or user_input != 'R':
-        print('You have not entered a valid input.')
+        print('A valid input is X, E or R. You have not entered a valid input.')
         main_menu_display()
     else:
         main_menu_input()
