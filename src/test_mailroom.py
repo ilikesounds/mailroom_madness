@@ -5,7 +5,11 @@ import pytest
 
 
 DONOR_DICT_TABLE = {
-    {'Jonn Doe': [100, 150, 250]},
-    {'Jane Doe': [200, 250, 50]},
-    {'Bob Ross': [1000, 550, 18]},
+     'Jonn Doe': [100, 150, 250],
+     'Jane Doe': [200, 250, 50],
+     'Bob Ross': [1000, 550, 18],
 }
+
+
+@pytest.mark.parametrize()
+def test_
