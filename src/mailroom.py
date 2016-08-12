@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-""" This is the mailroom madness script. It will run from the cmd line and allow you to generate an email or report based on user input"""
+""" This is the mailroom madness script. It will run from the cmd line and
+ allow you to generate an email or report based on user input."""
 
 import sys
 import math
@@ -17,8 +18,8 @@ def main_menu_display():
     validation(user_input)
 
 
-def validation(user_input):
-    if user_input != 'X' or user_input != 'E' or user_input != 'R':
+def validation(input):
+    if input != 'X' or input != 'E' or input != 'R':
         print('A valid input is X, E or R. You have not entered a valid input.')
         main_menu_display()
     else:
@@ -48,5 +49,7 @@ def report(DONOR_DICT):
 def email():
     pass
 
-if __name__ == '__main__':
+
+def main():
+    """Run the module from the CLI."""
     main_menu_display()
