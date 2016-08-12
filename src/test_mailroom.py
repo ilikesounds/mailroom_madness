@@ -9,9 +9,3 @@ DONOR_DICT_TABLE = {
      'Jane Doe': [200, 250, 50],
      'Bob Ross': [1000, 550, 18],
 }
-
-
-@pytest.mark.parametrize()
-def test_donor_dict_to_list_1()
-    from mailroom import donor_dict_to_list
-    assert donor_list.len > 0

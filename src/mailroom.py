@@ -2,7 +2,7 @@
 """ This is the mailroom madness script. It will run from the cmd line and allow you to generate an email or report based on user input"""
 
 
-from sys import exit, argv
+# from sys import exit, argv
 
 
 DONOR_DICT = {'John Doe': [100, 150, 250],
@@ -27,22 +27,22 @@ def validation(user_input):
 
 def main_menu_input(user_input):
     if user_input == 'X':
-        sys.exit(0)
+        # sys.exit(0)
     elif user_input == 'R':
         report()
     elif user_input == 'E':
         email()
 
 
-def report():
-    pass
+def report(DONOR_DICT):
+    donor_list = list(DONOR_DICT.keys())
+    for idx in donor_list:
+        don_name = idx
+        don_total = sum(DONOR_DICT[idx])
+        don_num = len(DONOR_DICT[idx])
+        don_avg = don_total / don_num
+    print(don_name, don_num, don_avg, don_total)
 
 
 def email():
     pass
-
-def donor_dict_to_list(DONOR_DICT):
-    donor_list = []
-    for donor in DONOR_DICT:
-        donor_list.append(donor)
-    return donor_list
