@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """ This is the mailroom madness script. It will run from the cmd line and allow you to generate an email or report based on user input"""
 
-
-# from sys import exit, argv
+import sys
+import math
 
 
 DONOR_DICT = {'John Doe': [100, 150, 250],
@@ -11,9 +11,9 @@ DONOR_DICT = {'John Doe': [100, 150, 250],
 
 
 def main_menu_display():
-    print('Welcome to the Mailroom Script. Using this script you\'ll be able to display a report of donors and their cumulative donation totals or send a thank you email based on the most recent donation.')
-    user_input = input('Enter E for email, R for report or X to exit the script')
-    user_input = user_input.lower()
+    print('Welcome to the Mailroom Madness Program.\n\nUsing this module you\'ll be able to display a report of donors\nand their donation history or send a thank you email based\nfor their most recent donation.\n')
+    user_input = input('Enter E to send an email,\nR for report of donation history\nor X to exit the program.\n')
+    user_input = user_input.upper()
     validation(user_input)
 
 
@@ -27,7 +27,7 @@ def validation(user_input):
 
 def main_menu_input(user_input):
     if user_input == 'X':
-        # sys.exit(0)
+        sys.exit(0)
     elif user_input == 'R':
         report()
     elif user_input == 'E':
@@ -41,8 +41,12 @@ def report(DONOR_DICT):
         don_total = sum(DONOR_DICT[idx])
         don_num = len(DONOR_DICT[idx])
         don_avg = don_total / don_num
-    print(don_name, don_num, don_avg, don_total)
+        math.floor(don_avg)
+    return don_name, don_num, don_avg, don_total
 
 
 def email():
     pass
+
+if __name__ == '__main__':
+    main_menu_display()
