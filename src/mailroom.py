@@ -4,6 +4,7 @@
 
 import sys
 import math
+import pprint
 
 
 DONOR_DICT = {'Linus Torvalds': [100, 150, 250],
@@ -34,14 +35,23 @@ def main_menu_input(input):
         email(input)
 
 
-def report(DONOR_DICT):
-    donor_list = list(DONOR_DICT.keys())
-    for idx in donor_list:
-        don_name = idx
-        don_total = sum(DONOR_DICT[idx])
-        don_num = len(DONOR_DICT[idx])
+def report():
+    list_build = donor_stat(DONOR_DICT)
+    for i, donor in enumerate(list_build):
+        print('Donor {} has donated {} times. Of those donations, the avg donation is {}. The total amount of donations is {}'.format(donor[0], donor[2], donor[1], donor[3]))
+
+
+def donor_stat(DONOR_DICT):
+    donor_list = []
+    donor_list.clear()
+    for name, donation in DONOR_DICT.items():
+        don_name = name
+        print(don_name)
+        don_total = sum(donation)
+        don_num = len(donation)
         don_avg = don_total / don_num
-    return don_name, don_num, don_avg, don_total
+        donor_list.append([don_name, don_total, don_num, don_avg])
+    return donor_list
 
 
 def email(input):
