@@ -12,27 +12,26 @@ DONOR_DICT = {'John Doe': [100, 150, 250],
 
 
 def main_menu_display():
-    print('Welcome to the Mailroom Madness Program.\n\nUsing this module you\'ll be able to display a report of donors\nand their donation history or send a thank you email based\nfor their most recent donation.\n')
     user_input = input('Enter E to send an email,\nR for report of donation history\nor X to exit the program.\n')
-    user_input = user_input.upper()
+    # user_input = user_input.upper()
     validation(user_input)
 
 
 def validation(input):
-    if input != 'X' or input != 'E' or input != 'R':
-        print('A valid input is X, E or R. You have not entered a valid input.')
+    if input != 'X' and input != 'E' and input != 'R':
+        print('\nInvalid input. A valid input is X, E or R.\n')
         main_menu_display()
     else:
-        main_menu_input()
+        main_menu_input(input)
 
 
-def main_menu_input(user_input):
-    if user_input == 'X':
+def main_menu_input(input):
+    if input == 'X':
         sys.exit(0)
-    elif user_input == 'R':
-        report()
-    elif user_input == 'E':
-        email()
+    elif input == 'R':
+        report(input)
+    elif input == 'E':
+        email(input)
 
 
 def report(DONOR_DICT):
@@ -52,4 +51,5 @@ def email():
 
 def main():
     """Run the module from the CLI."""
+    print('Welcome to the Mailroom Madness Program.\n\nUsing this module you\'ll be able to display a report of donors\nand their donation history or send a thank you email for their\nmost recent donation.\n')
     main_menu_display()
