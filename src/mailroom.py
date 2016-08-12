@@ -13,7 +13,7 @@ DONOR_DICT = {'John Doe': [100, 150, 250],
 
 def main_menu_display():
     user_input = input('Enter E to send an email,\nR for report of donation history\nor X to exit the program.\n')
-    # user_input = user_input.upper()
+    user_input = user_input.upper()
     validation(user_input)
 
 
@@ -41,11 +41,10 @@ def report(DONOR_DICT):
         don_total = sum(DONOR_DICT[idx])
         don_num = len(DONOR_DICT[idx])
         don_avg = don_total / don_num
-        math.floor(don_avg)
     return don_name, don_num, don_avg, don_total
 
 
-def email():
+def email(input):
     pass
 
 
