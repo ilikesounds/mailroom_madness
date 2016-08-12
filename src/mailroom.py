@@ -6,8 +6,8 @@ import sys
 import math
 
 
-DONOR_DICT = {'John Doe': [100, 150, 250],
-              'Jane Doe': [200, 250, 50],
+DONOR_DICT = {'Linus Torvalds': [100, 150, 250],
+              'Jane Goodall': [200, 250, 50],
               'Bob Ross': [1000, 550, 1]}
 
 
